@@ -1,0 +1,98 @@
+$whiti-color: #4286f4;
+// g #5c9649 b #4286f4
+$smaller-screens: 'only screen and (max-width: 420px)';
+
+
+//$mobile-view:
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color: $whiti-color;
+}
+
+header{
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	outline: none;
+}
+
+.site-content{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.logo{
+	text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+	margin-top: 130px;
+	margin-bottom: -25px;
+	font-size: 200px;
+	color: white;
+
+	@media #{$smaller-screens}{
+		margin-top: 75px;
+		//margin-bottom: 0px;
+		font-size: 180px;
+		color: white;
+	}
+}
+
+.role-question {
+	text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+
+	@media #{$smaller-screens} {
+		font-size: 20px;
+	}
+}
+
+.role-buttons{
+	justify-content: center;
+	display: flex;
+
+	@media #{$smaller-screens} {
+		flex-direction: column;
+	}
+}
+
+.buttons{
+    text-decoration: none;
+}
+
+.role {
+	border-radius: 3px;
+	vertical-align: top;
+	border: 0;
+	padding: 0px;
+	width: 200px;
+	height: 100px;
+	margin: 10px;
+	font-size: 18px;
+	background-color: white;
+	transition: 0.3s;
+	font-weight: bold;
+	color:  $whiti-color;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+
+	&:hover {
+			box-shadow: none;
+			margin-top: 13px;
+			transition: all .2s;
+			-o-transition: all .2s;
+			-moz-transition: all .2s;
+			-webkit-transition: all .2s;
+	}
+
+	@media #{$smaller-screens}{
+	width: 290px;
+	height: 90px;
+	font-size: 20px;
+	}
+}

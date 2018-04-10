@@ -1,0 +1,76 @@
+
+Important Details For changes that might need to be made later:
+---------------------------------------------------------------
+
+1) The Application talks to the Whiti server which has a self signed https Certificate.
+This is what the TrustAllCertificates.java file is needed for. If the whiti server ever gets a third party signed certificate, this file should be removed and so should the references to this class from the ReadFromWhiti.java file.
+
+2) The application uses a rest API on learncode academy to save all the user data logs, which can be accessed via the following link:
+
+http://rest.learncode.academy/api/engrwhitiapp/userlogs
+
+This rest API might potentially be reset or perhaps even shut down at some point, which is a risk that can be managed by one of the following work arounds:
+
+WORK AROUNDS IF REST API STOPS WORKING:
+---------------------------------------
+
+* MOST PRACTICAL : Modify the Android Applications Software to use the device Internal storage for storing user data. Good documentation for this approach can be found on the Android Developers site:
+
+https://developer.android.com/guide/topics/data/data-storage.html
+
+I recommend reading the "Using the Internal Storage" section.
+
+Care would have to be taken to ensure that there wouldn't be a large amount of device
+storage being taken up by the app, so some type of DELETE feature should also be 
+implemented with this work around.
+
+* Use an SQLite Database to store user information, and modify the applications Software.
+The same link included above also contains information for how to use Databases for storage in an Android Application.
+
+* If Vini has started hosting the main Whiti Server on AWS or something similar, then 
+the server shouldn't be stopping and reseting all the JSON data after each session,
+so if this is the case it might be worth looking into whether you can make the app perform GET and POST requests to that server alone. This would also mean removing all the networking thread classes which obtain and send data to the rest API.
+
+* If Vini isn't hosting the server on AWS or anything similar, then you could look 
+into purchasing a domain to host the JSON data there. If you do this please remember to change the URL from the current API to the new server you'll use.
+
+
+How the Software works:
+-----------------------
+
+All Networking Processes are executed in their own threads. The save opperation 
+starts a thread that will obtain all the most recent user data from the Whiti server
+(it uses the ID attribute in the JSON objects to determine which are the newest data).
+It sends this data to the rest api (in a new thread) and then a final GET request is made to the rest api to obtain the current save state (again, this runs in its own thread) so Vini can view his saved data.
+
+The browse operation is much simpler: it simply starts one thread which will make a GET request from the rest API, load a HashMap with the JSON data so that user data is available for browsing on the local Client (Vini's phone).
+
+* delegate design pattern:
+
+This was what the "AsyncResponse" interface was used for: It was not possible to obtain 
+a reference to an EditText Object, unless your class extends Activity, this means we have to use the interface to ensure the data is sent to the main activity so we can set the EditText in that class where we can access it. 
+
+
+TODO : Include some info about the JSON posts for how the user data gets stored on the WHITI server.
+
+JSON -> Whiti Server:
+----------------------
+In the index.js file, there is a function called submitUserData, which makes an AJAX
+call to send JSON data to the Whiti server depending on what type of button was pressed
+(either Listener or Interpreter).
+
+This JSON data contains 'u' chars which is why I removed them in the android code
+(the JSONReader.java file) and also why JSON objects have 'serType' instead of 'userType' : this is NOT an accident, please be careful before trying to "fix this".
+
+HTML File for clearing the server:
+----------------------------------
+In Deployment_1/MoniterUserData you will find an index.html file which if you open
+will delete all the data stored on the rest API. The javascript can also be found in that file too. This javascript code works by sending a delete request to the rest API 
+for every single JSON object that it currently contains.
+
+
+
+
+
+
+

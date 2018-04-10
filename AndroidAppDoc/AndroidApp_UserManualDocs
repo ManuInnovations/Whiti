@@ -1,0 +1,44 @@
+Please Note : You need an internet connection in order for this app to work.
+The application will warn you if your Wifi is not enabled.
+
+The UserData App allows you to save data from a Whiti User Session, and/or
+Browse Data that has already been saved. Therefore, the first Screen of the application displays two buttons:
+
+* Save
+
+* Browse
+
+Save:
+-----
+
+Select the save button when you would like to save user data from a Whiti User Session. 
+The Button will open a dialog asking you for the Whiti Servers IP address. Please type in the IP address of the machine that is being used to run the server (this should be part of the url).
+
+Once the IP Address has been typed in, press "OK". You will now be taken to a loading screen that will save the user data from the current Whiti Session. Once the data has been saved, a toast will appear telling you that you may proceed to browse the data you just saved.
+
+Browse:
+-------
+
+Select the browse button when you would like to view previoulsy saved data. 
+You will be taken to a loading screen and a pop up will appear when the data is ready
+to be viewed. From there, select the "select date" button at the very top of the screen.
+This will open up a calander, where you can choose the day for which you want to see user data. The app will tell you how many Listeners and Interpreters used Whiti on the selected date, and will also provide a monthly statistic: 
+
+Whenever you select a date, the app will show you the total number of Listeners and Interpreters for the dates Month and Year (ignoring the day). Therefore, if you are 
+only interested in viewing monthly statistics, select any day from the calander for the Month and Year that you are interested in.
+
+That should be it :) 
+
+DELETE ALL USER LOGS:
+---------------------
+
+Should you want to clear all user logs completely, please navigate to Deployment_1/MoniterUserData and open the "index.html" file. This will open a file in your web browser and will allow you to see the user data number at the top (PLEASE NOTE: this will not match the user data you have on your phone, and that's ok).
+
+Press "Clear Data" and this should clear all the previously saved user logs. 
+
+
+
+
+
+
+

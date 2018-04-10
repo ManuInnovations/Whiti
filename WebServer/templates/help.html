@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whiti - Help and Support</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/help/help.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu/menu.min.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+</head>
+<body>
+  	<header>
+		<div class="desktop-header">
+			<div class="desktop-header-inner">
+				<div class="desktop-header-logo">
+					<a href="index.html">
+						Whiti
+					</a>
+				</div>
+				<ul class="desktop-header-nav">
+						<li>
+							<a href="about.html">About</a>
+						</li>
+						<li>
+							<a href="news.html">News</a>
+						</li>
+						<li>
+							<a href="feedback.html">Feedback</a>
+							</li>
+						<li>
+							<a href="help.html">Help & Support</a>
+						</li>
+				</ul>
+				<ul class="desktop-header-nav-right">
+					<li>
+						<a href="create_event.html">Create an event</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<!-- The Drop down menu, that will appear on smaller screens: -->
+		<div class = "mobile-menu">
+			<div class = "mobile-menu-inner">
+				<div class = "mobile-menu-hamburger">
+					<button id = "dropClick">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<div class="mobile-menu-logo">
+					<a href="index.html">
+					W
+					</a>
+				</div>
+			</div>
+			<div class>
+				<ul id = "menuItems" class = "mobile-menu-content">
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li>
+						<a href="news.html">News</a>
+					</li>
+					<li>
+						<a href="feedback.html">Feedback</a>
+					</li>
+					<li>
+						<a href="help.html">Help & Support</a>
+					</li>
+					<li>
+						<a href="create_event.html">Create an event</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<h1 class = "about-title-text"> Help and Support </h1>
+		<div class="site-content">
+			<div class = "help-text">
+				<h2>Contents</h2>
+				<ol>
+					<li><a href='#create-an-event'>Create an event</a></li>
+					<li><a href='#join-an-event'>Joining an event</a></li>
+				</ol>
+				<h3 id='create-an-event'>Create an event</h3>
+				<p>
+				To create an event in Whiti, navigate to the 'Create Event' page.
+				</p>
+				<p>
+				Enter in an optional event title and description that will be displayed on the event page, then press 'Create Event'.
+				</p>
+				<div class='tutorial-image'>
+					<img src="{{ url_for('static', filename='img/tutorial-create-event.png') }}"/>
+				</div>
+				<p>
+				You will be taken to a new page which displays your unique event code. Make sure to share this with your users so that they can join the event.
+				</p>
+
+				<h3 id='join-an-event'>Join an event</h3>
+				<p>
+				Your first action is to choose whether you are joining the event as a listener or an intepreter. If you are wanting to hear the interpretation then join as a 'Listener'. If you will be interpreting the speaker at the event, then pick 'Interpreter'.
+				</p>
+				<div class='tutorial-image'>
+					<img src="{{ url_for('static', filename='img/tutorial-pick-listener.png') }}"/>
+					<img src="{{ url_for('static', filename='img/tutorial-pick-interpreter.png') }}"/>
+				</div>
+				<p>
+				You should now be taken to a page that prompts you to enter an event code. One should be provided at the event, please enter this into the provided text field and press 'Join'</p>
+				<div class='tutorial-image'>
+					<img src="{{ url_for('static', filename='img/tutorial-join-event.png') }}"/>
+				</div>
+				<p>
+				If you joined the event as an interpreter, you will now be able to broadcast your interpretation to the listeners by speaking into your device's mic.
+				</p>
+				<p>If you joined the event as a listener, you will now be able to receive audio from the interpreter.
+				</p>
+			</div>
+
+		</div>
+
+<!-- For java script: -->
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.js') }}"></script>
+<script src="{{ url_for('static', filename='js/help.js') }}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- For the Whiti color scheme: -->
+    <color name="whitiBlue">#4692EE</color>
+    <color name="whitiWhite">#FFFFFF</color>
+    <color name="whitiGrey">#4F5155  </color>
+
+</resources>

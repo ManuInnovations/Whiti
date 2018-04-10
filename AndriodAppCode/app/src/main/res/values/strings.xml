@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">UserDataMonitor</string>
+
+    <!-- For the Button names-->
+    <string name="date_picker_button">Pick Date</string>
+    <string name="title_activity_select_user_data">SelectUserDataActivity</string>
+
+    <!-- The hint that will be shown in the first activitys text field, for inputing the ip address: -->
+    <string name="input_ip">To Save User Data : Please input your IP Address here </string>
+
+    <!-- the big "W" to render as the logo on the front screen: -->
+    <string name="whitiLogo"> W </string>
+    <!-- the title text that will appear on the two buttons on the front screen: -->
+    <string name="save"> Save </string>
+    <string name="browse"> Browse </string>
+
+    <!-- Text to do with the loading of data from the rest API: -->
+    <string name="loadingScreen">Loading Data ...</string>
+    <string name="dataLoaded"> User Data is displayed here</string>
+
+
+</resources>

@@ -1,0 +1,96 @@
+$whiti-color:  #4286f4;
+$smaller-screens: 'only screen and (max-width: 420px)';
+
+body {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  background-color: $whiti-color; }
+
+header{
+	text-align: center;
+}
+
+.site-content{
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+	outline: none;
+}
+
+
+.feedback-title-text {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 75px;
+  color: white;
+}
+
+.text-area {
+  border-radius: 3px;
+  font-size: 15px;
+  margin: auto;
+  font-family: inherit;
+  color: black;
+  background-color: white;
+  border: black;
+  width: 600px;
+  height: 300px;
+  text-align: center;
+}
+
+/* This is to make the placeholder text white in the text area: */
+textarea::-webkit-input-placeholder {
+color: black;
+}
+
+
+.submit-button {
+  margin: 10px;
+  border-radius: 3px;
+  border: none;
+  width: 200px;
+  height: 100px;
+  font-size: 18px;
+  background-color: white;
+  transition: 0.3s;
+  font-weight: bold;
+  color: $whiti-color;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover {
+		box-shadow: none;
+		margin-top: 13px;
+		transition: all .2s;
+		-o-transition: all .2s;
+		-moz-transition: all .2s;
+		-webkit-transition: all .2s;
+}
+
+}
+
+
+/*scss for smaller screens:*/
+@media only screen and (max-width: 420px) {
+
+.text-area{
+  width: 300px;
+  height: 300px;
+}
+
+.submit-button{
+  width: 300px;
+}
+
+}

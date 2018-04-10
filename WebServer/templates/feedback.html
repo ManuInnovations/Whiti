@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whiti - Feedback</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/feedback/feedback.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu/menu.min.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+    <body>
+    <header>
+		<div class="desktop-header">
+			<div class="desktop-header-inner">
+				<div class="desktop-header-logo">
+					<a href="index.html">
+						Whiti
+					</a>
+				</div>
+				<ul class="desktop-header-nav">
+						<li>
+							<a href="about.html">About</a>
+						</li>
+						<li>
+							<a href="news.html">News</a>
+						</li>
+						<li>
+							<a href="feedback.html">Feedback</a>
+							</li>
+						<li>
+							<a href="help.html">Help & Support</a>
+						</li>
+				</ul>
+				<ul class="desktop-header-nav-right">
+					<li>
+						<a href="create_event.html">Create an event</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<!-- The Drop down menu, that will appear on smaller screens: -->
+		<div class = "mobile-menu">
+			<div class = "mobile-menu-inner">
+				<div class = "mobile-menu-hamburger">
+					<button id = "dropClick">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<div class="mobile-menu-logo">
+					<a href="index.html">
+					W
+					</a>
+				</div>
+			</div>
+			<div class>
+				<ul id = "menuItems" class = "mobile-menu-content">
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li>
+						<a href="news.html">News</a>
+					</li>
+					<li>
+						<a href="feedback.html">Feedback</a>
+					</li>
+					<li>
+						<a href="help.html">Help & Support</a>
+					</li>
+					<li>
+						<a href="create_event.html">Create an event</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="site-content">
+		<h1 class = "feedback-title-text">Feedback</h1>
+	    <textarea id = "typeFeedback" placeholder="Please provide us with your feedback" class = "text-area"></textarea>
+	    <div>
+	    <button id = "submitFeedback" class = "submit-button"> Submit Feedback
+	    </button>
+	    </div>
+    </div>
+
+	<script src="{{ url_for('static', filename='js/jquery-3.2.1.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+
+
+    </body>
+
+</html>

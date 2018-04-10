@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<head>
+  <!-- on load needed for variable to exist -->
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+      var socket = io.connect('http://' + document.domain + ':' + location.port + '/test');
+      socket.on('connect', function() {
+          socket.emit('my event', {data: 'I\'m connected!'});
+      });
+      //
+      window.onload = function(){
+        document.getElementById('test').onclick = function () {
+          var message = {"data": 'testPing'}
+          socket.emit('message',JSON.stringify(message));
+      };};
+  </script>
+</head>
+<body>
+<a id="test">
+<!--a href="">-->
+  Some text
+</a>
+
+
+</body>

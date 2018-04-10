@@ -1,0 +1,25 @@
+{
+  "name": "whiti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "event.js",
+  "scripts": {
+    "start": "budo event.js --live"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "budo": "^10.0.3",
+    "watchify": "^3.9.0",
+    "gulp": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-util": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-rename": "latest",
+    "gulp-changed": "latest"
+  },
+  "dependencies": {
+    "simple-peer": "^8.1.0"
+  }
+}
