@@ -61,7 +61,7 @@ def testmain():
     emailServer.sendmail(message['From'],message['To'],message['Content'])
     #then quit
     emailServer.close()
-    print 'email sent!'
+    print ('email sent!')
 """
 To access content from within another program,
 use: server_email.initServer(server_email.loadEmails())

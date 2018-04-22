@@ -14,15 +14,15 @@ try:
     local_ip_address = s.getsockname()[0]
 except:
     #If we can't get it, they'll just have to find it themselves
-    print "Cannot detect IP without internet connection, you need to find it yourself!"
+    print ("Cannot detect IP without internet connection, you need to find it yourself!")
     local_ip_address = "your_ip_address_here"
 finally:
      s.close()
 
-print "Other devices can connect by going to:"
-print "https://" + local_ip_address + ":5000"
+print ("Other devices can connect by going to:")
+print ("https://" + local_ip_address + ":5000")
 
-print "Please wait..."
+print ("Please wait...")
 
 #Apparently execfile is bad practice, but this seemed like the best cross-platform method
 execfile('FlaskServer.py')

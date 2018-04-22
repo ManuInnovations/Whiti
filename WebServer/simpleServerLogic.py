@@ -1,4 +1,4 @@
-import random, string  
+import random, string
 """
 simpleServerLogic:
 Designed to replace the functionality of the full serverLogic class
@@ -20,7 +20,7 @@ class SimpleEvent:
     eventCode = 0123
     hostID = Host
     """
-    def __init__(self,dictMessage):        
+    def __init__(self,dictMessage):
         self.eventCode = dictMessage["eventCode"]
         self.eventName = dictMessage["eventName"]
         self.description = dictMessage["eventDescription"]
@@ -102,12 +102,12 @@ def createReply(dictMessage,userID,EventList,UserToEvent):
             return reply
     elif mType =="connectToClient":
         #TODO
-        print "TODO"
+        print ("TODO")
     else:
         reply =  { "messageType":"error", "errorCode":"004", "errorMessage":"message not recognised" }
         return reply
 
-      
+
 def generateEventCode(EventList):
     possible = "abcdefghijklmnopqrstuvwxyz123456789"
     #check namespace available

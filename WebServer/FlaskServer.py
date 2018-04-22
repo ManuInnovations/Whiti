@@ -35,7 +35,7 @@ def indexRequest():
             "dateInformation":request.cookies.get('dateInformation'),
             "id":request.cookies.get('userID')
             }
-        print newConnectionRecord
+        print (newConnectionRecord)
         connectionRecords.append(newConnectionRecord)
         return redirect('/join_event.html')
 @app.route('/join_event.html',methods=['GET','POST'])
@@ -110,8 +110,8 @@ def feedbackRequest():
             messageContent = jsonForm['content']
             #should also check for sql injections if using sql and any other forms of code interference
             if regexSafe.search(messageContent)==None:#Message is safe!
-                print "Recieved feedback:"
-                print messageContent
+                print ("Recieved feedback:")
+                print (messageContent)
                 #EMAIL SENT OUT USING SERVER. NEEDS SAFETY FEATURES
                 emailSettingsTemp = Server_Email.getAddress()
                 #using the recieved email settings, lookup the email adresses
@@ -121,7 +121,7 @@ def feedbackRequest():
                 #this also needs to disallow future usage of multiple feedback submissions
                 return render_template('feedback.html'),200
             else:
-                print "WARNING: Someone has tried to send non safe Feedback(possible code injection)"
+                print ("WARNING: Someone has tried to send non safe Feedback(possible code injection)")
                 return render_template('feedback.html'),400
         else:
             return render_template('feedback.html'),400
